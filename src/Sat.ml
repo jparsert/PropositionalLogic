@@ -8,24 +8,10 @@ type solutionState = SolutionState of (literal list  *  Cnf.t)
 
 type t = Unsatisfiable | Satisfiable of (literal list)
 
-(*
-let find_shortest_clause (cnf:Cnf.t) = 
-  let rec aux (clause , len) = function
-    | [] -> clause
-    | x :: xs -> let l = length x in 
-      if l = 1 then x 
-      else if (l<len) then aux (x , l) xs 
-      else aux (clause , len) xs
-  in 
-  match cnf with
-  | [] -> None 
-  | x :: xs -> let res = aux (x , length x) xs in Some res *)
-
-
 let clean_cnf (_cnf:Cnf.t) ((sym , b):literal) = 
   drop_while (contains (sym , b)) _cnf
   
-    
+(* Choosing literal*) 
 let choose_literal (cnf:Cnf.t) : literal option =
   list_to_maybe @@ concat cnf
 
