@@ -1,2 +1,3 @@
 B _build
-S . 
+S src
+PKG core lwt ounit
