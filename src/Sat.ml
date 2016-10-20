@@ -1,4 +1,4 @@
-open Cnf 
+(*open Cnf 
 open Utils
 open List
 
@@ -41,6 +41,6 @@ let rec dpll (sol : solutionState) : t=
     | Satisfiable s -> Satisfiable s 
     | Unsatisfiable -> dpll @@ SolverState( (sym,not b)::m , clean_cnf phi (sym , not b))
 
-
+*)
 
 
